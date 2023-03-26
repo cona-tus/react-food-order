@@ -23,8 +23,13 @@
 }
 
 .prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   font-size: var(--font-big);
+  margin: 0;
+  padding: 0;
 }
 
 .title {
