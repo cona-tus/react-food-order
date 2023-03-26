@@ -1,0 +1,59 @@
+.button {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 15px;
+  background-color: var(--color-gray);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.icon {
+  display: flex;
+  color: var(--color-text);
+  font-size: var(--font-big);
+}
+
+.badge {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+  font-family: 'Rubik', sans-serif;
+  font-size: var(--font-small);
+  font-weight: var(--font-bold);
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
