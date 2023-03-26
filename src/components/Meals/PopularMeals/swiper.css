@@ -1,0 +1,26 @@
+.swiper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.swiper-slide {
+  cursor: pointer;
+  max-width: 160px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: var(--color-orange);
+}
+
+.swiper-slide img {
+  width: 150px;
+  position: absolute;
+  top: -20px;
+  right: -40px;
+}
