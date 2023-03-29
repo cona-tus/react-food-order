@@ -44,7 +44,7 @@ export default function Cart({ onClose }) {
         <>
           <Confetti
             opacity={0.7}
-            numberOfPieces={300}
+            numberOfPieces={150}
             gravity={0.3}
             recycle={false}
           />
