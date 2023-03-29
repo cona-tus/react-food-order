@@ -87,6 +87,30 @@
   text-align: center;
   position: absolute;
   top: 45%;
-  left: 50%;
-  transform: translate(-50%, -45%);
+  left: 40%;
+  transform: translate(-35%, -45%);
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-40%, -45%);
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  color: var(--color-orange);
+}
+
+.message {
+  color: var(--color-dark-gray);
+  font-size: var(--font-small);
+  font-weight: var(--font-default);
+  text-align: center;
 }

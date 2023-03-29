@@ -1,9 +1,14 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import CartContext from './CartContext';
 
-const defaultCartState = {
-  items: [],
-  totalAmount: 0,
+const getInitialCartState = () => {
+  const cartState = localStorage.getItem('cartstate');
+  return cartState
+    ? JSON.parse(cartState)
+    : {
+        items: [],
+        totalAmount: 0,
+      };
 };
 
 const cartReducer = (state, action) => {
@@ -55,6 +60,12 @@ const cartReducer = (state, action) => {
         totalAmount: updatedTotalAmount,
       };
     }
+    case 'CLEAR': {
+      return {
+        items: [],
+        totalAmount: 0,
+      };
+    }
     default: {
       return;
     }
@@ -64,7 +75,7 @@ const cartReducer = (state, action) => {
 const CartProvider = ({ children }) => {
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
-    defaultCartState
+    getInitialCartState()
   );
 
   const addToCartHandler = (item) => {
@@ -81,11 +92,20 @@ const CartProvider = ({ children }) => {
     });
   };
 
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: 'CLEAR' });
+  };
+
+  useEffect(() => {
+    localStorage.setItem('cartstate', JSON.stringify(cartState));
+  }, [cartState]);
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addToCartHandler,
     removeItem: removeCartItemHandler,
+    clearCart: clearCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
