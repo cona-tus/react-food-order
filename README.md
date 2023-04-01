@@ -78,6 +78,8 @@ function App() {
 export default App;
 ```
 
+![door-local](https://user-images.githubusercontent.com/90844424/229258910-9eb2a485-6502-45c8-8673-a29098c5b2f2.jpg)
+
 ```jsx
 import { useEffect, useReducer } from 'react';
 import CartContext from './CartContext';
@@ -286,6 +288,8 @@ const cartReducer = (state, action) => {
 ```
 
 ## 3-3. Show Cart List
+
+![door-cart](https://user-images.githubusercontent.com/90844424/229258909-47f71c40-195c-4e06-90db-2298615cfddc.jpg)
 
 ```jsx
 export default function Cart({ onClose }) {
