@@ -276,7 +276,7 @@ const cartReducer = (state, action) => {
 
 ![door-cart](https://user-images.githubusercontent.com/90844424/229258909-47f71c40-195c-4e06-90db-2298615cfddc.jpg)
 
-cartCtx의 addItem을 호출해 item을 전달하며, removeItem에 id를 전달합니다. 그리고 props로 onAdd, onRemove를 추가합니다. bind를 호출하여 함수가 실행될 때 받을 인수를 미리 구성할 수 있습니다. item과 item.id를 받도록 합니다.
+cartCtx의 addItem을 호출해 item을 전달하며, removeItem에 id를 전달합니다.
 
 ```jsx
 export default function Cart({ onClose }) {
@@ -304,6 +304,10 @@ export default function Cart({ onClose }) {
     cartCtx.clearCart();
   };
 ```
+
+<br/>
+
+props로 onAdd, onRemove를 추가합니다. bind를 호출하여 함수가 실행될 때 받을 인수를 미리 구성할 수 있습니다. item과 item.id를 받도록 합니다.
 
 ```jsx
   return (
